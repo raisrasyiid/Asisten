@@ -5,55 +5,36 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [FableFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FableFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fable, container, false)
-    }
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FableFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FableFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        // Inflate the layout for this fragment
+        val rootView = inflater.inflate(R.layout.fragment_fable, container, false)
+
+        // Find the RecyclerView from the inflated layout
+        val fable: RecyclerView = rootView.findViewById(R.id.recylerViewFable)
+
+        // Set layout manager for RecyclerView
+        fable.layoutManager = LinearLayoutManager(activity)
+
+        val data = ArrayList<BukuModel>()
+        data.add(BukuModel(R.drawable.theant,"The Ant and The Grasshopper","The Ant and the Grasshopper, alternatively titled The Grasshopper and the Ant"))
+        data.add(BukuModel(R.drawable.theboy,"The Boy Who Cried Wolf","The tale concerns a shepherd boy who repeatedly fools villagers"))
+        data.add(BukuModel(R.drawable.themac,"Fairy Tales Collection","Books that contain many fairy tales"))
+        data.add(BukuModel(R.drawable.stuartfable,"Stuart Little","The book is a realistic yet fantastical story about a mouse-like human boy named Stuart Little"))
+        data.add(BukuModel(R.drawable.thefox,"The Fox and The Crow","A story of how the Fox talked the Bird into eating his food"))
+        data.add(BukuModel(R.drawable.thelion,"The Lion and The Mouse","A Lion lay asleep in the forest, his great head resting on his paws"))
+        data.add(BukuModel(R.drawable.aesopfable,"Aesop's Fables","Aesop's Fables : The Classic Edition"))
+
+        // Set adapter for RecyclerView
+        val adapter = AdapterHome(data)
+        fable.adapter = adapter
+
+        return rootView
     }
 }

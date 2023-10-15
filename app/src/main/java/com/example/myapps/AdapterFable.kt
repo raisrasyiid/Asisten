@@ -7,8 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class AdapterScience(private val listBuku:List<FragmentModel>) :
-    RecyclerView.Adapter<AdapterScience.ViewHolder>() {
+class AdapterFable (private val listBuku:List<FragmentModel>) :
+    RecyclerView.Adapter<AdapterFable.ViewHolder>() {
 
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView){
         val image: ImageView = itemView.findViewById(R.id.imageViewBook)
@@ -18,7 +18,7 @@ class AdapterScience(private val listBuku:List<FragmentModel>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(
-            R.layout.card_layout_science,parent,false)
+            R.layout.card_layout_fable,parent,false)
         return ViewHolder(view)
     }
 

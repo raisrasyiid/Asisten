@@ -24,9 +24,13 @@ class ScienceFragment : Fragment() {
         rvBuku.layoutManager = LinearLayoutManager(activity)
 
         val data = ArrayList<BukuModel>()
-        data.add(BukuModel(R.drawable.book1,"Emi Beach Adventure","Lorem Ipsum dolor sit amet lorem"))
-        data.add(BukuModel(R.drawable.book2,"Ade's Adventure","Lorem Ipsum dolor sit amet lorem"))
-        data.add(BukuModel(R.drawable.book4,"Mermaid To Rescue","Lorem Ipsum dolor sit amet lorem"))
+        data.add(BukuModel(R.drawable.book1,"Emi Beach Adventure","A children's storybook about a young girl named Emi who goes on a vacation to a beautiful island with her family"))
+        data.add(BukuModel(R.drawable.book2,"Ade's Adventure","When Ade moves to London from Nigeria, he knows things will be different"))
+        data.add(BukuModel(R.drawable.book4,"Mermaid To Rescue","While the Mermaid is very much trapped in her world"))
+        data.add(BukuModel(R.drawable.compass,"The Compass of Pleasure","A leading brain scientist's look at the neurobiology of pleasure-and how pleasures can become addictions"))
+        data.add(BukuModel(R.drawable.cosmos,"Carl Sagan Cosmos","Cosmos is a popular science book written by astronomer and Pulitzer Prize-winning author Carl Sagan"))
+        data.add(BukuModel(R.drawable.national,"Bill Bryson","A Short History of Nearly Everything"))
+        data.add(BukuModel(R.drawable.theselfishgene,"The Selfish Gene","As influential today as when it was first published, The Selfish Gene has become a classic exposition of evolutionary thought"))
 
         // Set adapter for RecyclerView
         val adapter = AdapterHome(data)
