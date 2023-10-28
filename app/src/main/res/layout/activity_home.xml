@@ -88,7 +88,7 @@
             android:text="Reading" />
 
         <Button
-            android:id="@+id/menu4"
+            android:id="@+id/btnSpace"
             android:layout_width="wrap_content"
             android:layout_height="65dp"
             android:layout_weight="1"

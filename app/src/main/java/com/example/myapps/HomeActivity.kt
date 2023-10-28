@@ -1,6 +1,7 @@
 package com.example.myapps
 
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,11 +11,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class HomeActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
         val btnBook = findViewById<Button>(R.id.btnBookKid)
+        val btnSpace = findViewById<Button>(R.id.btnSpace)
         val rvBuku:RecyclerView = findViewById(R.id.recylerViewBuku)
 
         //set layout manager di recylerView
@@ -33,6 +36,11 @@ class HomeActivity : AppCompatActivity() {
         btnBook.setOnClickListener {
             val btn = Intent(this,BookKidActivity::class.java)
             startActivity(btn)
+        }
+
+        btnSpace.setOnClickListener {
+            val space = Intent(this,ContactActivity::class.java)
+            startActivity(space)
         }
     }
 }
